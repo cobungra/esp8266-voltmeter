@@ -28,7 +28,7 @@ String l8 = "<h3><a href='/name'><button>Name</button></a></h3>";
 String l9 = "<h3><a href='/'><button>Cancel</button>";
 String form1 ="";
 String form3 = "";
-String tail = "<hr><hr><h3><center><a href='http://www.lecity.edu.au'>City Limits Communications</a></center></h3></center>";
+String tail = "<hr><hr><h3><center>Footer text</center></h3></center>";
 String disp = "";
 // HTTP server will listen at port 80
 ESP8266WebServer server(80);
