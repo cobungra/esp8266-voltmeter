@@ -29,9 +29,6 @@ void setup() {
   display.setFont(ArialMT_Plain_10);
   Serial.println("Version: " +swVersion);
   Serial.println("");
-  Serial.println("WiFi connected"); 
-  Serial.println("IP address: ");
-  Serial.println(WiFi.localIP());
    //Start screen
 display.setFont(ArialMT_Plain_16);  
 display.drawString(0, 0, "WiFi");
