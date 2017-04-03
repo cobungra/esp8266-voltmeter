@@ -33,7 +33,7 @@ String disp = "";
 // HTTP server will listen at port 80
 ESP8266WebServer server(80);
 
-void handle_root(){
+void handle_root(){ //Webpage view for browsers or phones connected to this AP
  // get the value of request argument "trigger" and convert it to float
  float v = (analogRead(0) * vPow) / 1024.0;
  float v2 = v / (r2 / (r1 + r2));
@@ -47,7 +47,7 @@ void handle_root(){
 disp = l0 + l1 + l2 + l3 + l4 + l5 + l8 + tail;
 server.send(200, "text/html", disp); 
 } 
-void handle_volts(){
+void handle_volts(){  //Shortform display for the OLED monitor (volts only)
   float v = (analogRead(0) * vPow) / 1024.0;
   float v2 = v / (r2 / (r1 + r2));
  l5 = String(v2);
@@ -55,14 +55,14 @@ void handle_volts(){
   server.send(200, "text/html", disp); 
   }
 
-void handle_name(){
+void handle_name(){  //Can change the name of the Voltmeter in webpage views
 form1 = "<h3><form action='/name2'><label>Set charger name (" + chargerName + "): </label><input name='chgid' maxlength='9'>";
 form3 ="<input type='submit' value='Set'></form></h3>";
  disp = l0 + l1 + l3a + l4 +form1 +form3 +l9 +tail;
   server.send(200, "text/html", disp); 
   }
 
-void handle_name2(){
+void handle_name2(){  //Save the new name into EEPROM
 String chgid = server.arg("chgid");
  int charLength=chgid.length();
   chargerName=chgid;
@@ -91,18 +91,11 @@ WiFi.mode(WIFI_AP_STA);
   //setupWiFi();
   server.begin();
   Serial.println("");
-//  //WiFi.begin(ssid, password);
-//  // Wait for connection
-//  while (WiFi.status() != WL_CONNECTED) {
-//    delay(500);
-//    Serial.print(".");
-//  }
   Serial.begin(115200);
   Serial.println("");
   Serial.print("Connected to ");
-  //Serial.println(ssid);
-Serial.print("IP address: ");
- Serial.println(apIP);
+  Serial.print("IP address: ");
+  Serial.println(apIP);
   float vdd = ESP.getVcc() / 1000.0; 
 
    Serial.println("Server started");
@@ -143,7 +136,7 @@ void loop(void) {
  float v = (analogRead(0) * vPow) / 1024.0;
  float v2 = v / (r2 / (r1 + r2));
  checkvolts(v2);
-  //Get the relay status
+  //Get the relay status  optional charger relay control goes here
   
   // check for incomming client connections frequently in the main loop:
   server.handleClient();
