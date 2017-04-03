@@ -1,1 +1,7 @@
 
+The OLED monitor uses #include "SSD1306Brzo.h" and other great techniques from Squix' library.
+This monitor is always powered up.  The button is a link RST > Gnd and so wakes up the ESP whenevr it is needed.
+Three loops to display the voltage found on the sender's webpage and then goes to ESP.deepsleep
+
+There's enough space inside the little box for a USB battery charger module and the 16850 battery.  
+Cut a hole in the bottom of the box to access the usb socket.
