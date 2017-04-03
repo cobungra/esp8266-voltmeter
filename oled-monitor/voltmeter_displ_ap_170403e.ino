@@ -1,8 +1,7 @@
 /** ESP-01 Compile as Wemos !!!!  
- * 5 second delay
  * Goes to sleep after 30 seconds display
  * OLED Display for Wifi Voltmeter
- * Set the Network addAP(SSID,Pwd) and thevoltmeter sender's url
+ * Set the Network addAP(SSID,Pwd) and the voltmeter sender's url
  */
 
 #include <ESP8266WiFi.h>
