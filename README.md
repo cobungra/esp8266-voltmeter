@@ -9,3 +9,4 @@ There are two parts:
   Configuration is needed to set the matching wifi networks.
   Options are available to set the Name of the voltmeter being read.
   
+![alt tag](https://cloud.githubusercontent.com/assets/25142892/24594593/126ec37a-1872-11e7-9090-f82c56a88fa5.png)
